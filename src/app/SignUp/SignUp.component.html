@@ -1,0 +1,82 @@
+<form (submit)="onReg(registerForm)" #registerForm="ngForm" *ngIf="!isLoading">
+  <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+  <div class="wrapper wrapper--w780">
+      <div class="card card-3">
+
+          <div class="card-heading"></div>
+
+          <div class="card-body">
+
+            <h2 class="ti" >Registration Info</h2>
+            <br>
+
+              <form class="example-form">
+                <mat-form-field class="example-full-width">
+                  <mat-label>ESTIAM</mat-label>
+                  <br>
+                  <input matInput disabled value="Projet E4B">
+                </mat-form-field>
+
+                <table class="example-full-width" cellspacing="0"><tr>
+                  <td><mat-form-field class="example-full-width">
+                    <mat-label>Prénom</mat-label>
+                    <input matInput  [(ngModel)]="name" name="name">
+                  </mat-form-field></td>
+                  <td><mat-form-field class="example-full-width">
+                    <mat-label>Nom</mat-label>
+                    <input matInput>
+                  </mat-form-field></td>
+                </tr></table>
+
+                <p>
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Addresse</mat-label>
+                    <textarea matInput placeholder="31 estiam">31 estiam porte de lilas</textarea>
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Addresse 2</mat-label>
+                    <textarea matInput></textarea>
+                  </mat-form-field>
+                </p>
+
+                <table class="example-full-width" cellspacing="0"><tr>
+                  <td><mat-form-field class="example-full-width">
+                    <mat-label>Ville</mat-label>
+                    <input matInput placeholder="Ex. San Francisco">
+                  </mat-form-field></td>
+                  <td><mat-form-field class="example-full-width">
+                    <mat-label>Commune</mat-label>
+                    <input matInput placeholder="Ex. California">
+                  </mat-form-field></td>
+                  <td><mat-form-field class="example-full-width">
+                    <mat-label>Code Postale</mat-label>
+                    <input matInput #postalCode maxlength="5" placeholder="Ex. 75020" value="75020">
+                    <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+                  </mat-form-field></td>
+                </tr></table>
+                <table class="example-full-width" cellspacing="0"><tr>
+                  <td><mat-form-field class="example-full-width">
+                    <mat-label>@Email</mat-label>
+                    <input matInput  type="email" [(ngModel)]="email" name="email" >
+                  </mat-form-field></td>
+                  <td><mat-form-field class="example-full-width">
+                    <mat-label>Mot de passe</mat-label>
+                    <input matInput  #pass maxlength="14" type="password" [(ngModel)]="password" name="password">
+                    <mat-hint align="end">{{pass.value.length}} / 14</mat-hint>
+                  </mat-form-field></td>
+                </tr></table>
+                <div class="but">
+                <button (click) ="onRegister()" color="accent"mat-raised-button type="submit">Submit</button>
+                </div>
+                <div class="hyp">
+                  <a routerLink="/login" routerLinkActive="mat-accent">
+                    login
+                  </a>
+                </div>
+              </form>
+
+          </div>
+      </div>
+  </div>
+</div>
+</form>

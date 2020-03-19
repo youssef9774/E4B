@@ -1,0 +1,16 @@
+
+<mat-card>
+ <mat-form-field>
+    <input matInput type="email" [(ngModel)]="entredValue" placeholder="E-mail">
+
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="password"[(ngModel)]="ex1" placeholder="Password">
+
+  </mat-form-field>
+</mat-card>
+<hr>
+<button mat-raised-button color='primary' (click)=" onAddpost()">save</button>
+<p>{{newPost}}</p>
+<hr>
+<p>{{ex}}</p>
